@@ -12,19 +12,18 @@
         <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&family=Nunito+Sans&display=swap" rel="stylesheet"> <!--Para agregar fuente montserrat y nunito sans, en el css tendrian que hacer un cambio a sus secciones para aplicar la fuente-->
     </head>
     <body>
+        <!--Encabezado-->
         <header>
-            <!--Encabezado-->
-            <div class="logo">
-                <img src="images/logo2.png" alt="Logo">
+            <script src="assets/scripts/main.js"></script>
+            <div id="top" class="logo">
+              <a href="http://plantae-app.com"><img src="assets/images/logo2.png" alt="Logo"></a>
             </div>
             <ul class="menu">
-                <li>Nuestra App</li>
-                <li>Características</li>
-                <li>Interfaz</li>
-                <li>Contactanos</li>
-                <li>Nuestros Planes</li>
+                <a href="#our-app"><li>Nuestra App</li></a><a href="#features"><li>Características</li></a><a href="#preview"><li>Interfaz</li></a><a href="#contact"><li>Contactanos</li></a><a href="#planes"><li>Nuestros Planes</li></a>
             </ul>
-            <li class="get-app">Get to App</li>
+            <li class="get-app">
+                <a href="#download"><button class="get-app-button">DESCARGAR</button></a>
+            </li>
         </header>
         <!--Fin Encabezado-->
         <br><br><br><br><br><br><br><br><br><br><br>
@@ -182,6 +181,54 @@
         </div>
         
         <!-- Cuarta parte del Cuerpo - Fin de Slider-->
+
+<!--Quinta parte del Cuerpo - Nuestros Planes-->
+  <section class="plans-container">
+    <h2>NUESTROS PLANES</h2>
+    <br>
+    <br>
+    <div id="planes" class="plans">
+      <div class="plan">
+        <div class="plan-box">
+          <h2>$0 / mes</h2>
+          <p>Gratuito</p>
+          <ul class="checklist">
+            <li><span class="checkmark"></span> Escaneo para identificación de plantas</li>
+            <li><span class="checkmark"></span> Recordatorio del riego</li>
+            <li><span class="checkmark"></span> Aviso sobre tiendas y viveros cercanos a ti</li>
+            <li><span class="checkmark"></span> Comparación de precios de las plantas e implementos</li>
+            <li><span class="checkmark"></span> Indicación sobre las mejores temporadas para siembra de plantas</li>
+          </ul>
+          <a class="plan-get-app" href="#download"><div href="#download" class="get-app2">Obtén la app</div></a>
+        </div>
+      </div>
+
+      <div class="plan">
+        <div class="plan-box">
+          <h2>$0.99 / mes</h2>
+          <p>Pro</p>
+          <ul class="checklist">
+            <li><span class="checkmark"></span> Todas las características del plan gratuito</li>
+            <li><span class="checkmark"></span> Consultas con tus horticultores expertos</li>
+          </ul class="checklist">
+          <a class="plan-get-app" href="#download"><div href="#download" class="get-app2">Obtén la app</div></a>
+        </div>
+      </div>
+
+      <div class="plan">
+        <div class="plan-box">
+          <h2>$3.00 / mes</h2>
+          <p>Premium</p>
+          <ul class="checklist">
+            <li><span class="checkmark"></span> Todas las características del plan gratuito</li>
+            <li><span class="checkmark"></span> Sin anuncios</li>
+          </ul class="checklist">
+          <a class="plan-get-app" href="#download"><div class="get-app2">Obtén la app</div></a>
+        </div>
+      </div>
+    </div>
+  </section>
+<!-- Quinta parte del Cuerpo - Fin de Nuestros Planes-->
 
         <!-- Ultima parte del cuerpo - Descarga la app -->
         <h2>Descarga la app ahora</h2>

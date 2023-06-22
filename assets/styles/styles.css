@@ -1,0 +1,800 @@
+html {
+  scroll-behavior: smooth;
+  /* Tamaño de fuente por defecto en navegadores: 16px -> 62.5% de 16px = 10px */ 
+  /* em = unidades relativas respecto al font-size del elemento actual */
+  /* rem = unidades relativas respecto al font-size de la raiz html */
+  /* Entonces 1rem=10px (Utilizar rem o em para que sea responsive) */
+  font-size: 62.5%; 
+}
+body {
+  background-color: #E7EFCD;/*color del cuerpo de la pagina*/
+  margin: 0;
+  padding: 0;
+}
+header  {
+  position: sticky;
+  top: 0;
+  background-color: #E7EFCD;
+  padding: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 100000;
+  font-size: 1.6rem;
+  width: 100%;
+  transition: 0.6s
+}
+
+header ul{
+  font-size: 0;
+}
+
+header .logo {
+  float: left;
+  margin-left: 20em; /*Distancia del logo al borde izquierdo */
+}
+
+header.sticky{
+  padding: 0.5rem 10rem;
+  background: #E7EFCD;
+  z-index: 100000;
+}
+
+.menu li{
+  font-size: 1.6rem;
+  color:black;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: bold;
+  text-decoration:none;
+}
+
+header .menu {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+header .menu li {
+display: inline-block;
+margin-right: 7rem;
+}
+
+header .menu li a:hover {
+color: #666;
+}
+
+.get-app {
+text-decoration: none;
+color: #333;
+padding: 5px;
+margin-right: 200px ;
+list-style: none;
+}
+/*Slider*/
+
+#slider {
+  position: relative;
+  width: 300px;
+  height: 600px;
+  margin: 80px auto;
+  font-family: 'Helvetica Neue', sans-serif;
+  perspective: 1400px;
+  transform-style: preserve-3d;
+}
+
+#slider input {
+  display: none;
+}
+
+#slider label {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  color: white;
+  font-size: 70px;
+  font-weight: bold;
+  border-radius: 5px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 400ms ease;
+}
+
+/* Slider Funcionalidad */
+
+#slider input:checked ~ label {
+  transform: translate3d(0, 0, 0);
+}
+#s1:checked ~ #slide2,
+#s2:checked ~ #slide3,
+#s3:checked ~ #slide4,
+#s4:checked ~ #slide5,
+#s5:checked ~ #slide1 {
+  transform: translate3d(90%, 0, -100px); /* Aumentar el porcentaje para el triple de separación */
+}
+
+#s1:checked ~ #slide3,
+#s2:checked ~ #slide4,
+#s3:checked ~ #slide5,
+#s4:checked ~ #slide1,
+#s5:checked ~ #slide2 {
+  transform: translate3d(180%, 0, -250px); /* Aumentar el porcentaje para el triple de separación */
+}
+
+#s1:checked ~ #slide4,
+#s2:checked ~ #slide5,
+#s3:checked ~ #slide1,
+#s4:checked ~ #slide2,
+#s5:checked ~ #slide3 {
+  transform: translate3d(-180%, 0, -250px); /* Aumentar el porcentaje para el triple de separación */
+}
+
+#s1:checked ~ #slide5,
+#s2:checked ~ #slide1,
+#s3:checked ~ #slide2,
+#s4:checked ~ #slide3,
+#s5:checked ~ #slide4 {
+  transform: translate3d(-90%, 0, -100px); /* Aumentar el porcentaje para el triple de separación */
+}
+/*---------------------*/
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column; /* Cambio en la dirección de flexión */
+  min-height: 700px; /* Altura mínima para evitar que se solape el contenido */
+}
+
+.slogan {
+  position: relative;
+  flex: 1.5;
+  background-color: white;
+  padding: 2rem;
+  height: 39rem;
+  margin-left: 35rem; /* Ajusta este valor según tus necesidades */
+  margin-right: 20rem;
+}
+.slogan h1 {
+  font-family: 'Montserrat';
+  font-size: 3.5rem;
+  color: #483C1F;
+  letter-spacing: 0.05rem;
+  line-height: 1.5;
+  margin-bottom: 3rem;
+  margin-left: 3rem;
+}
+
+.slogan h2 {
+  font-family: 'Montserrat';
+  color: #483C1F;
+  letter-spacing: 0.05rem;
+  line-height: 1.5;
+  margin-bottom: 3rem;
+  margin-left: 3rem;
+}
+.imagen_celular {
+  margin-top: 2rem; /* Espacio entre el eslogan y la imagen */
+}
+
+.imagen_celular img {
+  width: 25rem;
+  height: 50rem;
+}
+
+/* 
+Se traslado a la tercera sección
+@media (min-width: 1200px) {
+  .container {
+      flex-direction: row; /* Volver a la dirección de flexión original 
+  }
+
+  .imagen_celular {
+      margin-top: 0; /* Reiniciar el espacio entre el eslogan y la imagen 
+      margin-right: 22.5rem;
+  }
+  
+} */
+
+.imagen_app {
+  flex: 1;
+  margin-left: 3.125rem;
+  margin-top: 5rem;
+}
+
+.imagen_app img {
+  width: 55rem;
+  height: 5.5rem;
+}
+
+
+/*Segunda parte del cuerpo*/
+.columna_cuadros {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+.cuadro_simple {
+  background-color: white;
+  border: 2px solid #ccc;
+  padding: 20px;
+  width: 450px;
+  text-align: left;
+  margin-bottom: 50px;
+}
+
+.cuadro_titulo {
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.cuadro_texto {
+  color: #666;
+}
+
+.imagen_app_3d {
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.imagen_app_3d img {
+  max-width: 100%;
+  height: auto;
+  margin-top: 130px;
+}
+
+.fondo_blanco {
+  background-color: white;
+  text-align: center;
+  padding-bottom: 50px;
+}
+
+.fondo_blanco h2{
+  font-size: 2rem;
+}
+
+.responsive-video {
+  position: relative;
+  padding-bottom: 30px;  /*Proporción del video (altura / anchura) */
+  padding-top: 30px; /* Espacio adicional arriba del iframe (opcional) */
+  /* height: 0; */
+  max-width: 100%;
+  overflow: hidden;
+  margin-bottom: -5px;
+}
+
+.responsive-video iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+} 
+
+/* Media query para pantallas pequeñas */
+@media (max-width: 600px) {
+  .columna_cuadros {
+    align-items: center;
+  }
+
+  .cuadro_simple {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+
+  .right-download-container{
+    text-align: center;
+  }
+
+  .left-download-container{
+    order: 1;
+    margin-left: 0rem;
+  }
+  
+  .right-download-container{
+    order: 2;
+  }
+
+  .plans {
+    justify-content: space-evenly;
+  }
+
+  .plan{
+    margin-right: 2rem;
+  }
+
+  .plan-box{
+    overflow: auto;
+  }
+}
+/*Tercera parte del cuerpo*/
+#fondo{ /*imagen de fondo verde*/
+  background-image: url(../images/fondo_verde2.png);
+  background-size: cover; /*Para que la imagen cubra el tamaño de la pagina*/
+  background-position: center center;
+  background-repeat: no-repeat;
+  height: auto; /*Se le coloca esta altura para que entre todo el texto requerido dentro del fondo*/
+  width: 100%;
+  /*estas 2 lineas de código son para el titulo de la tercera seccion*/
+  color:white;
+  text-align: center;
+}
+h1, h2, h3, h4{
+  font-family: 'Montserrat', sans-serif;
+}
+p {
+  font-family: 'Montserrat', 'Nunito Sans', sans-serif; /*Para agregar la fuente nunito sans a la tercera seccion, si lo consideran necesario apliquen este mismo codigo a otra de las secciones*/
+  font-size: 1.6rem;
+}
+.imagen-icono {
+  width: 6rem;
+  height: 6rem;
+}
+.imagen img {
+
+  width: 25rem;
+  height: 56rem;
+  color: rgba(43, 43, 43, 0.692);
+  border-radius: 3rem;
+  box-shadow: 1rem 0.7rem 1rem; /*agregar sombre detras de la imagen para darle efecto 3d*/
+} 
+.title{
+  font-size: 2rem;
+}
+.parrafo_titulo{
+  text-align: center;
+}
+.parrafo1{
+  text-align: center;
+}
+.parrafo1 p{
+  width: 400px;
+  margin: 0 auto;
+  white-space: normal;
+}
+.parrafo1 h4{
+  font-size: 1.7rem;
+}
+.parrafos_derecha{
+  text-align: center; 
+}
+.parrafos_izquierda{
+  text-align: center; 
+}
+.parrafo2 {
+  width: 400px;
+  margin: 0 auto;
+  white-space: normal;
+}
+.parrafo2 h4{
+  font-size: 1.7rem;
+}
+.parrafo3 {
+  white-space: normal;
+  margin: 0 auto;
+  width: 400px;
+}
+.parrafo3 h4{
+  font-size: 1.7rem;
+}
+.parrafo4 p{
+  width: 400px;
+  text-align: center;
+  white-space: normal;
+  margin: 0 auto;
+}
+.parrafo4 h4{
+  font-size: 1.7rem;
+}
+/* Estilos para pantallas grandes */
+@media (min-width: 1024px) {
+  .container {
+    flex-direction: row; /* Volver a la dirección de flexión original */
+  }
+
+  .imagen_celular {
+    margin-top: 0; /* Reiniciar el espacio entre el eslogan y la imagen */
+    margin-right: 22.5rem;
+  }
+  .parrafo_titulo{
+    color:white;
+    text-align: center;
+    margin-left: 5rem; 
+  }
+  .parrafo1{
+    color:white;
+    text-align: center;
+    margin-left: 5rem; 
+  }
+  .parrafos_alineados { /*para que los parrafos de la derecha e izquierda de la tercera seccion esten a la misma altura*/
+    display: flex;
+    margin-left: 5rem;
+  }
+  .parrafos_derecha{
+    flex: 1;
+    color:white;
+  }
+  #derecha{
+    text-align: right; /*parrafo este alineado a la derecha*/
+    margin-left: 25rem; 
+  }
+  #izquierda{
+    text-align: left; /*parrafo este alineado a la izquierda*/
+    margin-right: 25rem;
+  }
+  .parrafos_izquierda{
+    flex: 1;
+    color:white;
+  }
+  #derecha1{
+    text-align: right; /*parrafo inferior este alineado a la derecha*/
+    margin-left: 25rem; 
+  }
+  #izquierda1{
+    text-align: left; /*parrafo inferior este alineado a la derecha*/
+    margin-right: 25rem;
+  }
+  .parrafo4{
+    color:white;
+    text-align: center;
+    margin-left: 5rem;
+  }
+  .imagen {
+    flex: 1; 
+    text-align: center; /*centrar la imagen entre los textos de los 2 primeros parrafos*/
+    margin-right: 1rem;
+  }
+  .embed-container {
+    width: 200px;
+    height: 150px;
+  } 
+}
+
+/* Fin tercera parte del cuerpo */
+
+/* INICIO Descargar app */
+
+/* BOTON DE DESCARGA DEL HEADER */
+.get-app-button a{
+  color:inherit;
+  text-decoration: inherit;
+}
+
+.get-app-button{
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-left: 16px;
+  padding-right: 16px;
+  background-color:#7E8925;
+  color: white;
+  font-family:'Nunito Sans';
+  font-size: 17px;
+  font-weight: bold;
+  border: rgb(198, 200, 108);
+  border-style: solid;
+  border-width: 2px;
+  border-radius: 3px;
+  transition: box-shadow 0.15s;
+}
+
+.get-app-button:hover{
+  cursor: pointer;
+  opacity: 95%;
+  box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.5);
+}
+
+.get-app-button:active{
+  opacity: 80%;
+}
+
+/* SECCIÓN DE DESCARGA DE LA APP */
+.download-container{
+  display: flex;
+  flex-wrap: wrap;
+  background-color: white;
+  font-family: 'Nunito Sans', sans-serif;
+  padding-bottom: 10rem;
+}
+
+.left-download-container{
+  flex: 1 1 50%;
+  text-align: center;
+}
+
+.right-download-container{
+  flex: 1 1 40%;
+  margin-top: 10rem;
+  text-align: center;
+}
+
+.download-title{
+  margin-top: 25rem; 
+  font-size: 30px;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: bold;
+  display: inline-block;
+}
+
+.download-buttons{ 
+  margin-top: 3rem;
+}
+
+.store-button{
+  margin-right: 3rem;
+  width: 18rem;
+}
+
+.app-stats{
+  margin-top: 5rem;
+  padding-bottom: 5rem;
+}
+
+.stats-button{
+  flex: 0 0 30%;
+  font-size: 20px;
+  padding-top: 1.25em;
+  padding-bottom: 0.75em;
+  padding-left: 1.6em;
+  padding-right: 1.6em;
+  margin-right: 1.75em;
+  margin-bottom: 1.75em;
+  border: none;
+  border-radius: 0.25em;
+  font-family: "Nunito Sans";
+  font-weight: bold;
+  color: white;
+  background-color: #7E8925;
+  transition: opacity 0.2s;
+}
+
+.stats-button:hover{
+  opacity: 92%;
+}
+
+.stats-button:active{
+  opacity: 87%;
+}
+
+.stats-button-icon{
+  width: 2.5em;
+}
+
+/* FIN Descargar app */
+
+.back-to-top{
+  background-color: white;
+  text-align: center;
+}
+
+.back-to-top img{
+  border: none;
+  height: 50px;
+  width: 50px;
+  cursor: pointer;
+}
+
+/*Pie de Pagina*/
+.fondo_marron {
+  background-color: #483C1F;
+  height: 850px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.cuadro_grande {
+  border-radius: 25px;
+  background-color: white;
+  border: 2px solid #ccc;
+  padding: 20px;
+  width: 900px;
+  text-align: center;
+}
+.imagen_email {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  flex: 1;
+}
+
+.imagen_email img {
+  width: 70px;
+  height: 70px;
+}
+.imagen_wsp {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  flex: 1;
+}
+.imagen_wsp img {
+  width: 60px;
+  height: 60px;
+}
+.union_iconos {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: row;
+  margin-top: 20px;
+}
+
+.footer{
+  width: 100%;
+  background-color: #483C1F;
+}
+.contenedor1{
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* Crea tres columnas de igual tamaño */
+  gap: 20px;
+  font-size: 1.6rem;
+}
+.barra1{
+  padding: 15px;
+  margin-left: 20px;
+}
+.barra1 p{
+  color: #fff;
+}
+.navegacion{
+  text-align:left;   /* text porque va a mover los textos de la barra */
+  font-size:1.8rem;
+  color:var(--blanco);
+}
+.navegacion a{
+ 
+  color: #fff;
+  text-decoration: none;
+}
+.barra1 img{
+  border-radius: 25px;
+  width: 140px;
+  height: 80px; 
+}
+.barra2 h3{
+  color: #fff;
+}
+.Nosotros1 a{
+  display: block;
+  color: #fff;
+  text-decoration: none;
+}
+.barra3 img{
+  width: 50%;
+  height: 55%;
+} 
+.barra3 h3{
+  color: #fff;
+}
+.contenedor2{
+  text-align: center;
+  font-size: 1.3rem;
+}
+.contenedor2 small{
+  color: #fff;
+}
+
+@media screen and (max-width: 700px){
+  
+}
+/* Nuestros Planes */
+
+.plans-container h2{
+  text-align: center;
+  font-size: 2rem;
+}
+
+.plans-container {
+  background-color: #e7efcd;
+  border-radius: 2rem;
+  padding: 2rem;
+}
+
+.plans {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.plan {
+  text-align: justify;
+  font-size: 12px;
+}
+
+.plan-box {
+  background-color: #ffffff;
+  border-radius: 2em;
+  padding: 2em;
+  margin-bottom: 2em;
+  height: 25em;
+  position: relative;
+}
+
+.plan-get-app{
+  color:inherit;
+  text-decoration: inherit;
+  position: absolute;
+  bottom: 0;
+  width: 90%;
+  left: 50%;
+  top: 90%;
+  transform: translate(-50%, -50%);
+}
+
+.checklist {
+  list-style-type: none;
+  padding: 0;
+}
+
+.checklist li {
+  position: relative;
+  padding-left: 2em;
+  margin-bottom: 1em;
+}
+
+.checkmark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 2em;
+  width: 2em;
+  border-radius: 50%;
+  background-color: #e7efcd;
+}
+
+.checkmark::after {
+  content: '';
+  position: absolute;
+  display: block;
+  left: 0.7em;
+  top: 0.3em;
+  width: 0.5em;
+  height: 1em;
+  border: solid #7e8925;
+  border-width: 0 0.2em 0.2em 0;
+  transform: rotate(45deg);
+}
+
+.checklist li:hover .checkmark::after {
+  display: block;
+}
+
+.get-app2 {
+  background-color: #7e8925;
+  color: #ffffff;
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+  text-align: center;
+  margin-top: 1rem;
+  position: relative;
+  transition: background-color 0.3s, color 0.3s, border-color 0.3s;
+}
+.enlace {
+  color:inherit;
+  text-decoration: inherit;
+}
+.get-app2::after {
+  content: '\2192'; /* Código de flecha derecha */
+  position: absolute;
+  top: 50%;
+  right: 0.5rem;
+  transform: translateY(-50%);
+}
+
+.get-app2:hover {
+  background-color: #d0d893;
+  color: #7e8925;
+  border-color: #7e8925;
+}
+
+.get-app2:hover::after {
+  color: #7e8925;
+}
+
+.get-app2:hover::before {
+  border-color: #ffffff;
+}
